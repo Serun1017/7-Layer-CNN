@@ -20,7 +20,7 @@ batch_size = 100
 emnist_dataset = EMNIST(root='data/', split='byclass', train=True, transform=transforms.ToTensor(), download=True)
 emnist_dataloader = DataLoader(emnist_dataset, batch_size=batch_size, shuffle=True)
 
-# 모델 초기화 및 손실 함수, 최적화 기준 정의
+# Model Init. 
 model = CNNModel().to(device)
 criterion = nn.CrossEntropyLoss().to(device)
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
@@ -28,7 +28,7 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 total_batch = len(emnist_dataloader)
 
 
-# 학습
+# Model Train
 for epoch in range(train_epochs):
     avg_loss = 0
     for images, labels in emnist_dataloader:

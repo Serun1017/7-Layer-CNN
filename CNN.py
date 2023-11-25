@@ -16,19 +16,19 @@ class CNNModel(nn.Module):
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
         self.linear_relu_stack = nn.Sequential(
-            nn.Linear(64 * 7 * 7, 256, bias=True),
+            nn.Linear(64 * 7 * 7, 1024, bias=True),
             nn.ReLU(),
-            nn.Linear(256, 512, bias=True),
+            nn.Linear(1024, 512, bias=True),
             nn.ReLU(),
-            nn.Linear(512, 814, bias=True)  # 10개의 숫자 클래스 + 37개의 문자 클래스
+            nn.Linear(512, 62, bias=True)  # 10 digit classes + 52 letter classes
         )
 
     def forward(self, x):
-        out = self.layer1(x)
-        out = self.layer2(out)
-        out = out.view(out.size(0), -1)
+        x = self.layer1(x)
+        x = self.layer2(x)
+        x = x.view(x.size(0), -1) # Flatten the data to 1 dim.
 
-        out = self.linear_relu_stack(out)
+        x = self.linear_relu_stack(x)
 
-        return out
+        return x
     
