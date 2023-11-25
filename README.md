@@ -2,6 +2,8 @@
 
 세종대학교 소프트웨어학과 19011625 허진수
 
+[![Video Label](https://img.youtube.com/vi/FpEDzDqADCw/0.jpg)](https://youtu.be/FpEDzDqADCw)
+
 ---
 
 ## EMNIST
