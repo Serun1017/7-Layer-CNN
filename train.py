@@ -12,7 +12,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Parameter
 learning_rate = 0.001
-train_epochs = 15
+train_epochs = 30
 batch_size = 100
 
 

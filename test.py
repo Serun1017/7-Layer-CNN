@@ -3,7 +3,6 @@ import torchvision.transforms as transforms
 import random
 import matplotlib.pyplot as plt
 
-from CNN import CNNModel
 from torchvision.datasets import EMNIST
 from torch.utils.data import DataLoader
 
